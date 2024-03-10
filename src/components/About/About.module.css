@@ -2,91 +2,86 @@
 
 .container {
   position: relative;
-  background-color: rgba(12, 12, 12, 0.6);
-  border-radius: 15px;
-  padding: 73px;
-  margin-top: 129px;
-  z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  margin-top: 3rem;
+  min-height: 100vh; /* Fill the screen's height */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  text-align: center;
 }
 
 .title {
-  color: var(--color-text);
-  font-size: 35px;
-  font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  font-size: 2.5rem; /* Title size */
+  font-weight: 800; /* Font weight for the title */
+  margin-bottom: 2rem; /* Margin for spacing */
+  text-align: center; /* Centered title text */
+  color: var(
+    --color-secondary
+  ); /* Bright blue for the title for a pop of color */
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
 
-.aboutImage {
-  width: 35%;
+.pheader h2 {
+  font-size: 1rem; /* Font size for paragraphs */
+  font-weight: 600;
+  line-height: 1; /* Line height for readability */
+  color: var(--color-bg); /* Deep indigo for paragraph text */
 }
 
 .aboutItems {
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+  max-width: 900px; /* Max width for content */
+  width: 100%; /* Full width */
+  padding: 2rem; /* Padding for the list */
+  list-style: none; /* Remove list styles */
+  border-radius: 10px; /* Rounded corners for the list */
 }
 
 .aboutItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-radius: 20px;
-  list-style: none;
-  padding: 25px;
-  background-image: linear-gradient(
-    90deg,
-    rgba(165, 215, 232, 0.42) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: 0.4s;
+  border-radius: 1rem; /* Rounded corners for items */
+  margin-bottom: 2rem; /* Margin for spacing between items */
+  padding: 2rem; /* Padding inside items */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  transition: box-shadow 0.3s ease; /* Transition for the shadow effect */
+  color: var(--color-bg);
 }
 
 .aboutItem:hover {
-  background-size: 100% 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover for a lift effect */
+  transform: translateY(-4px); /* Move up slightly on hover */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition for the shadow and lift effect */
+  background-color: var(--color-primary);
 }
 
 .aboutItem h3 {
-  font-size: 25px;
+  font-size: 1.5rem; /* Font size for paragraphs */
   font-weight: 600;
+  line-height: 1; /* Line height for readability */
+  color: var(--color-bg); /* Deep indigo for paragraph text */
+  padding-bottom: 20px;
 }
 
 .aboutItem p {
-  font-size: 25px;
+  font-size: 1rem; /* Font size for paragraphs */
+  line-height: 1; /* Line height for readability */
+  color: var(--color-bg); /* Deep indigo for paragraph text */
 }
 
 @media screen and (max-width: 830px) {
-  .container {
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
+  .title {
+    font-size: 2rem; /* Smaller font size for the title on mobile */
   }
 
-  .content {
-    flex-direction: column;
+  .aboutItem h3 {
+    font-size: 2rem; /* Smaller font size for headings on mobile */
   }
 
-  .aboutImage {
-    display: none;
-  }
+  @media screen and (max-width: 560px) {
 
-  .aboutItems {
-    margin-top: 29px;
-  }
-
-  .aboutItem {
-    padding-left: 0;
-    padding-right: 0;
+    .aboutItem h3 {
+      font-size: 2rem; /* Smaller font size for headings on mobile */
+    }
   }
 }

@@ -1,61 +1,102 @@
-@import "../../vars.css";
+/* ProjectCard.module.css */
 
-.container {
+.projectsSection {
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
-  box-shadow: 0 16px 14px 0 #04152d;
-  padding: 18px 24px;
-  max-width: 345px;
+  align-items: center;
+  padding: 2rem;
 }
 
-.image {
-  margin-bottom: 26px;
+.projectsTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--color-secondary);
 }
 
-.title {
-  font-size: 25px;
-  font-weight: 700;
-}
-
-.description {
-  margin-top: 6px;
-  font-size: 25px;
-  font-weight: 400;
-}
-
-.skills {
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates a responsive grid */
+  gap: 2rem; /* Space between the cards */
   width: 100%;
-  margin-top: 14px;
+  max-width: 1200px; /* Maximum width of the grid */
+  margin: auto; /* Centers the grid in the section */
+}
+
+.projectCard {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  background-color: var(--color-secondary); /* Light blue-gray background */
+  border: 1px solid var(--color-primary); /* Blue border */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.projectCard:hover {
+  transform: scale(1.03); /* Slightly enlarges the card on hover */
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.projectInfo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  color: var(--color-dark);
+}
+
+.projectLinks {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.demoLink,
+.sourceLink {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-top: 0.5rem;
+}
+
+.projectSkills {
+  display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  list-style: none;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .skill {
-  font-size: 25px;
-  font-weight: 400;
-  border-radius: 100px;
-  background: var(--color-dark);
-  padding: 2px 22px;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 0.75rem;
 }
 
-.links {
-  width: 100%;
-  margin-top: 26px;
-  display: flex;
-  justify-content: space-around;
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+  }
 }
 
-.link {
-  text-decoration: none;
-  color: var(--color-text);
-  font-size: 30px;
-  font-weight: 600;
-  border-radius: 100px;
-  background: var(--color-primary);
-  padding: 1px 22px;
+@media (max-width: 480px) {
+  .projectsGrid {
+    grid-template-columns: 1fr; /* One column for small screens */
+  }
 }

@@ -1,26 +1,26 @@
 [
   {
-    "title": "Project A",
+    "title": "Simple NFT",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "description": "Constructed a simple NFT application using Scaffold-ETH 2, compiling and deploying smart contracts with HardHat.",
+    "skills": ["Next.js", "Hardhat", "Solidity", "Scaffold.eth", "TypeScript"],
+    "demo": "https://speedrun-quest1-juans-projects-858499a9.vercel.app",
+    "source": "https://github.com/juanc004?tab=repositories"
   },
   {
-    "title": "Project B",
+    "title": "Acme Rocket Website",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node", "Sass"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "description": "Developed a space-themed web project leveraging HTML5, CSS3, and vanilla JavaScript, optimized with Tailwind CSS for responsiveness across devices.",
+    "skills": ["HTML5", "JavaScript", "TailwindCSS"],
+    "demo": "https://acme-voyage.onrender.com",
+    "source": "https://github.com/juanc004/Acme-Rockets-Webpage"
   },
   {
-    "title": "Project C",
+    "title": "Web GPT Store",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "description": "Build a DApp for a GPT-3 powered store, allowing users to purchase AI-generated content using OpenAI API",
+    "skills": ["Next.js", "TypeScript", "Thirdweb", "OpenAI"],
+    "demo": "https://github.com/juanc004/Web3-GPT-Store/tree/main",
+    "source": "https://github.com/juanc004/Web3-GPT-Store/tree/main"
   }
 ]

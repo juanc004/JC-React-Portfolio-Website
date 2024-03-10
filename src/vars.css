@@ -1,10 +1,13 @@
 :root {
   /* Colours */
-  --color-text: #fff;
-  --color-primary: #576cbc;
-  --color-secondary: #19376d;
-  --color-dark: #0b2447;
-  --color-bg: #04152d;
+  --color-text: #283593; /* Indigo */
+  --color-primary: #2979FF; /* Bright Blue */
+  --color-secondary: #FFD740; /* Amber */
+  --color-bg: #ECEFF1; /* Light Blue Gray */
+  --color-dark: #1A237E; /* Deep Indigo */
+  --color-bg-alt: #CFD8DC; /* Light Indigo */
+  --color-text-alt: #1E88E5; /* Cobalt */
+  --color-light: #BBDEFB; /* Light Blue */
 
   /* Fonts */
   --font-roboto: "Roboto";

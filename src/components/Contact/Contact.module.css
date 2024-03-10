@@ -3,62 +3,71 @@
 .container {
   color: var(--color-text);
   margin-top: 120px;
-  background-color: var(--color-secondary);
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100vw;
+  flex-direction: column; /* Start with column layout for better mobile-first approach */
+  align-items: center; /* Align children to the center horizontally */
+  text-align: center; /* Center-align the text for consistency */
+  width: 100%;
   padding: 58px 10%;
-  gap: 10px;
 }
 
 .text h2 {
-  font-size: 80px;
+  font-size: 3rem; /* Adjusted for responsive scaling */
   font-weight: 700;
-  letter-spacing: 4px;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 1rem; /* Consistent spacing */
 }
 
 .text p {
-  font-size: 40px;
+  font-size: 1.25rem; /* Adjusted for responsive scaling */
   font-weight: 400;
-  letter-spacing: 2px;
+  color: var(--color-text);
+  margin-bottom: 2rem; /* Space before the links */
 }
 
 .links {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row; /* Horizontal layout */
+  justify-content: center; /* Center items horizontally */
+  flex-wrap: wrap; /* Allow wrapping for different screen sizes */
   list-style: none;
-  gap: 26px;
+  gap: 26px; /* Space between link items */
 }
 
 .link {
   display: flex;
-  align-items: center;
-  gap: 25px;
+  align-items: center; /* Vertical alignment */
+  gap: 0.5em; /* Space between icon and text */
 }
 
 .link a {
-  color: var(--color-text);
+  color: var(--color-primary);
   text-decoration: none;
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
+  font-size: 1.5rem; /* Adjusted for responsive scaling */
+  font-weight: 600;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
+.link a:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.link img {
+  height: 1.5em; /* Icon size */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 830px) {
-  .container {
-    flex-direction: column;
-    gap: 23px;
-  }
-
-  .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .links {
-    align-items: center;
+    flex-direction: column; /* Stack link items vertically on smaller screens */
+  }
+
+  .link a {
+    justify-content: center; /* Ensure text is centered inside the anchor */
   }
 }
