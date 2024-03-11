@@ -1,87 +1,211 @@
 @import "../../vars.css";
 
-.container {
-  position: relative;
+/* Reset and base styles */
+body {
+  font-family: var(--font-roboto);
+  color: var(--color-bg);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* About section styles */
+.aboutSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 2rem;
-  margin-top: 3rem;
-  min-height: 100vh; /* Fill the screen's height */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   text-align: center;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-.title {
-  font-size: 2.5rem; /* Title size */
-  font-weight: 800; /* Font weight for the title */
-  margin-bottom: 2rem; /* Margin for spacing */
-  text-align: center; /* Centered title text */
-  color: var(
-    --color-secondary
-  ); /* Bright blue for the title for a pop of color */
+.aboutHeader {
+  width: 80%;
 }
 
-
-.pheader h2 {
-  font-size: 1rem; /* Font size for paragraphs */
-  font-weight: 600;
-  line-height: 1; /* Line height for readability */
-  color: var(--color-bg); /* Deep indigo for paragraph text */
+.divider {
+  border: none;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--color-dark),
+    var(--color-primary),
+    var(--color-dark)
+  );
+  width: 80%;
+  margin: 2rem auto;
 }
 
-.aboutItems {
-  max-width: 900px; /* Max width for content */
-  width: 100%; /* Full width */
-  padding: 2rem; /* Padding for the list */
-  list-style: none; /* Remove list styles */
-  border-radius: 10px; /* Rounded corners for the list */
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  -webkit-background-clip: text;
+  color: var(--color-secondary);
+  margin: 2rem 0;
 }
 
-.aboutItem {
-  border-radius: 1rem; /* Rounded corners for items */
-  margin-bottom: 2rem; /* Margin for spacing between items */
-  padding: 2rem; /* Padding inside items */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  transition: box-shadow 0.3s ease; /* Transition for the shadow effect */
+/* Content styles */
+.aboutContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.aboutTextContainer {
+  flex: 1 1 600px; /* min-width of 600px before wrap */
+  margin-top: 2rem;
+}
+
+.h1title {
+  font-size: 3rem; /* Responsive font size */
+  color: var(--color-);
+  margin-bottom: 0.5rem;
+}
+
+.h2text {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Use justify-content center for equal spacing */
+  padding: 2rem 1rem; /* Adjust padding for better spacing */
+  flex: 1;
+  max-width: 600px; /* Maximum width for text content */
+  gap: 2rem; /* Space between text and image */
+  font-size: 2rem;
+}
+
+.h2description {
+  font-size: 1.5rem; /* Responsive font size */
   color: var(--color-bg);
+  margin-bottom: 2rem;
 }
 
-.aboutItem:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover for a lift effect */
-  transform: translateY(-4px); /* Move up slightly on hover */
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition for the shadow and lift effect */
+.aboutImageContainer {
+  flex: 1 1 600px; /* min-width of 600px before wrap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutImage {
+  border-radius: 50%;
+  max-width: 100%;
+  border: 5px solid var(--color-bg-alt);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: floating 3s ease-in-out infinite;
+}
+
+/* Accordion styles */
+.mantraItem {
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow: hidden;
+  /* background-color: var(--color-bg-alt); */
+}
+
+.aboutHeading {
+  cursor: pointer;
   background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: 1rem;
+  margin: 0;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.aboutItem h3 {
-  font-size: 1.5rem; /* Font size for paragraphs */
-  font-weight: 600;
-  line-height: 1; /* Line height for readability */
-  color: var(--color-bg); /* Deep indigo for paragraph text */
-  padding-bottom: 20px;
+.aboutHeading:hover,
+.aboutHeading.active {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
 }
 
-.aboutItem p {
-  font-size: 1rem; /* Font size for paragraphs */
-  line-height: 1; /* Line height for readability */
-  color: var(--color-bg); /* Deep indigo for paragraph text */
+.span {
+  margin-left: auto;
 }
 
-@media screen and (max-width: 830px) {
-  .title {
-    font-size: 2rem; /* Smaller font size for the title on mobile */
+.aboutParagraph {
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+  padding: 1rem;
+  margin: 0;
+  transition: all 0.3s ease-out;
+}
+
+.aboutHeading.active + .aboutParagraph,
+.aboutParagraph.open {
+  display: block; /* Show paragraph when active/open */
+  padding: 1rem;
+}
+
+.span {
+  margin-left: auto;
+  padding: 0 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .aboutImageContainer,
+  .aboutTextContainer {
+    flex-basis: 100%; /* Full width on smaller screens */
   }
 
-  .aboutItem h3 {
-    font-size: 2rem; /* Smaller font size for headings on mobile */
+  .aboutImage {
+    width: 80%;
+    margin-bottom: 2rem;
   }
 
-  @media screen and (max-width: 560px) {
+  .aboutTextContainer {
+    text-align: center;
+    padding: 0 2rem; /* Add padding to maintain spacing */
+  }
+}
 
-    .aboutItem h3 {
-      font-size: 2rem; /* Smaller font size for headings on mobile */
-    }
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 0.5rem; /* Adjusted padding */
+    margin-top: 10px;
+  }
+
+  .sectionTitle,
+  .h1title {
+    font-size: 2rem; /* Smaller font size for titles */
+  }
+
+  .h2text {
+    font-size: 1.2rem; /* Adjust the font size for h2 text */
+  }
+}
+
+/* For screens 480px and below */
+@media (max-width: 480px) {
+  .sectionTitle {
+    margin-bottom: 0.5rem; /* Decrease the bottom margin of the section title */
+  }
+
+  .h1title {
+    margin-top: 0.5rem; /* Decrease the top margin of the h1 title greeting if necessary */
+    margin-bottom: 0.5rem; /* Also decrease the bottom margin to tighten up space */
+  }
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
   }
 }

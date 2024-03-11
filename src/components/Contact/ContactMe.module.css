@@ -1,0 +1,115 @@
+@import "../../vars.css";
+
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height of the viewport */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  -webkit-background-clip: text;
+  color: var(--color-secondary);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.contactHeader {
+  width: 80%;
+  margin-top: 4rem;
+}
+
+.divider {
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--color-dark),
+    var(--color-primary),
+    var(--color-dark)
+  );
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto; /* Centers the form */
+  padding: 2rem;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-primary); /* Blue border */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 4rem;
+}
+
+.formInput,
+.submitButton {
+  font-size: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.formInput {
+  background: none;
+  border: 1px solid var(--color-primary);
+  color: var(--color-light);
+}
+
+.formTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-dark); /* Primary color for the title */
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formInput {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: none;
+  border: 1px solid var(--color-dark); /* Border color */
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.formInput::placeholder {
+  color: var(--color-dark); /* Placeholder text color */
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-primary); /* Button background color */
+  color: var(--color-bg);
+  border: 8x;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background: var(--color-dark); /* Button hover background color */
+  color: var(--color-);
+}

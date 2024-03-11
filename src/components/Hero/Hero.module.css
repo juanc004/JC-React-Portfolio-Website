@@ -1,53 +1,58 @@
 @import "../../vars.css";
 
 .container {
-  position: relative;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; /* Use justify-content center for equal spacing */
-  padding: 4rem 2rem; /* Adjust padding for better spacing */
-  gap: 2rem; /* Space between text and image */
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center; /* Horizontal centering */
+  height: 80vh; /* Full viewport height */
+  text-align: center; /* Center text alignment for the content */
+  padding: 0; /* Optional padding */
+
+  box-sizing: border-box; 
 }
 
-.content {
-  flex: 1;
-  max-width: 600px; /* Maximum width for text content */
-}
 
 .title {
   font-size: 4rem; /* Responsive font size */
   color: var(--color-secondary); 
   margin-bottom: 1rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .description {
-  font-size: 1.5rem; /* Responsive font size */
+  font-size: 2rem; /* Responsive font size */
   color: var(--color-bg); 
   margin-bottom: 2rem;
+}
+
+.contactBtnContainer {
+  display: flex;
+  flex-direction: row; /* This ensures the buttons are in a row */
+  justify-content: center; /* This will center the buttons in the container */
+  gap: 10px; /* This adds space between the buttons */
 }
 
 .contactBtn {
   background-color: var(--color-secondary);
   color: var(--color-dark);
+  border: none; /* Assuming you don't want a border */
   border-radius: 50px;
   font-size: 1.5rem; /* Responsive font size */
   padding: 1rem 2rem; /* Padding adjusted */
   transition: background-color 0.3s ease;
+  cursor: pointer; /* Changes the mouse cursor on hover */
+  text-decoration: none; /* In case you're styling anchor tags as buttons */
+  /* Add other properties like font-weight, line-height, etc., as needed */
 }
 
 .contactBtn:hover {
   background-color: var(--color-primary);
   color: var(--color-bg);
-}
+  text-decoration: underline;
 
-.heroImg {
-  flex: 1;
-  width: 50%;
-  max-width: 350px; /* Maximum width for image */
-  height: auto;
-  border-radius: 50%;
-  animation: floating 3s ease-in-out infinite;
 }
 
 /* Responsive adjustments */
@@ -57,26 +62,60 @@
     text-align: center; /* Center text for mobile */
   }
 
-  .heroImg {
-    width: 80%;
-    max-width: 300px; /* Adjust maximum width for smaller screens */
-    order: -1; /* Ensure the image is on top on smaller screens */
+  .title {
+    font-size: 3rem; /* Slightly smaller than the base */
+  }
+
+  .description {
+    font-size: 1.75rem; /* Slightly smaller than the base */
+    margin-bottom: 1.5rem; /* Slightly less than the base */
+  }
+
+  .contactBtn {
+    font-size: 1.25rem; /* Slightly smaller than the base */
+    padding: 0.75rem 1.5rem; /* Slightly less padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto; /* Adjust height to fit content */
+    padding: 2rem 1rem; /* Add padding to avoid touching the screen edges */
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.5rem; /* Slightly less for better readability */
+    margin-bottom: 1.25rem;
+  }
+
+  .contactBtn {
+    font-size: 1rem; /* Adjust for smaller screens */
+    padding: 0.5rem 1rem; /* Reduce padding */
+  }
+}
+
+/* For screens 480px and below */
+@media (max-width: 480px) {
+
+  .container {
+    height: 85vh; /* Adjust height to fit content */
+    padding: 2rem 1rem; /* Add padding to avoid touching the screen edges */
+  }
+  .title {
+    font-size: 2rem; /* Further reduced to accommodate narrow screens */
   }
 
   .description {
     font-size: 1.25rem;
+    margin-bottom: 1rem; /* Even less space to keep it tight */
   }
 
   .contactBtn {
-    font-size: 1.25rem;
+    font-size: 0.875rem; /* Smaller font size for compact appearance */
+    padding: 0.5rem; /* Uniform padding */
   }
-}
-
-@keyframes floating {
-  0%, 100% { transform: translateY(-10px); }
-  50% { transform: translateY(10px); }
 }
