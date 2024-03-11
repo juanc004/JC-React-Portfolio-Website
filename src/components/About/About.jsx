@@ -15,7 +15,7 @@ export default function About () {
   };
 
   return (
-    <div className={styles.aboutSection}>
+    <section id="about" className={styles.aboutSection}>
       <div className={styles.aboutHeader}>
         <hr className={styles.divider} />
         <h1 className={styles.sectionTitle}>ABOUT ME</h1>
@@ -59,6 +59,6 @@ export default function About () {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

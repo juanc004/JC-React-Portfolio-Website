@@ -12,7 +12,7 @@ export default function Contact () {
   };
 
   return (
-    <section className={styles.contactSection}>
+    <section id="contact" className={styles.contactSection}>
     <div className={styles.contactHeader}>
         <hr className={styles.divider} />
         <h1 className={styles.sectionTitle}>CONTACT ME</h1>
