@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  min-height: 100vh;
+
 }
 
 .aboutHeader {
@@ -22,7 +22,7 @@ body {
 .projectsTitle {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--color-secondary);
 }
 
@@ -48,7 +48,7 @@ body {
     var(--color-primary),
     var(--color-secondary)
   );
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   color: var(--color-secondary);
   margin: 2rem 0;
 }
@@ -101,6 +101,7 @@ body {
   justify-content: flex-end;
   gap: 10px;
 }
+
 
 .demoLink,
 .sourceLink {

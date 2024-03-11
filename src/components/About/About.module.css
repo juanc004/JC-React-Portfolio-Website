@@ -13,10 +13,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 4rem 1rem;
-  min-height: 100vh;
+  height: 100vh;
   box-sizing: border-box;
 }
 
@@ -45,19 +44,7 @@ body {
   margin: 2rem 0;
 }
 
-/* Content styles */
-.aboutContent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 4rem;
-}
 
-.aboutTextContainer {
-  flex: 1 1 600px; /* min-width of 600px before wrap */
-  margin-top: 2rem;
-}
 
 .h1title {
   font-size: 3rem; /* Responsive font size */
@@ -70,10 +57,10 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; /* Use justify-content center for equal spacing */
+  justify-content: center;
   padding: 2rem 1rem; /* Adjust padding for better spacing */
   flex: 1;
-  max-width: 600px; /* Maximum width for text content */
+  max-width: 650px; /* Maximum width for text content */
   gap: 2rem; /* Space between text and image */
   font-size: 2rem;
 }
@@ -84,28 +71,57 @@ body {
   margin-bottom: 2rem;
 }
 
-.aboutImageContainer {
-  flex: 1 1 600px; /* min-width of 600px before wrap */
+.aboutContent {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  margin-top: 3rem;
+  
+}
+
+.aboutTextContainer {
+  flex: 1; /* Take up equal space */
+  order: 1; /* Ensure text is first */
+}
+
+.aboutImageContainer {
+  flex: 1; /* Take up equal space */
+  order: 2; /* Ensure image is second */
 }
 
 .aboutImage {
+  width: 100%; /* Full width of its container */
+  max-width: 600px; /* Maximum width of the image */
+  height: auto;
+  border-radius: 50%; /* Circular image */
+  border: 5px solid var(--color-bg-alt);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* .aboutImageContainer {
+  max-width: 600px;
+  justify-content: flex-end;
+} */
+
+/* .aboutImage {
   border-radius: 50%;
   max-width: 100%;
+  height: auto;
   border: 5px solid var(--color-bg-alt);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: floating 3s ease-in-out infinite;
-}
+} */
 
 /* Accordion styles */
-.mantraItem {
+/* .mantraItem {
   border: 1px solid var(--color-primary);
   border-radius: 8px;
   margin: 1rem 0;
   overflow: hidden;
-  /* background-color: var(--color-bg-alt); */
 }
 
 .aboutHeading {
@@ -140,58 +156,79 @@ body {
 
 .aboutHeading.active + .aboutParagraph,
 .aboutParagraph.open {
-  display: block; /* Show paragraph when active/open */
+  display: block; 
   padding: 1rem;
 }
 
 .span {
   margin-left: auto;
   padding: 0 1rem;
-}
+} */
+
+/* Accordion---Break */
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .aboutImageContainer,
-  .aboutTextContainer {
+  .aboutContent {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center; /* Center items since they're stacked */
+  }
+
+  .aboutTextContainer,
+  .aboutImageContainer {
     flex-basis: 100%; /* Full width on smaller screens */
+    max-width: 100%; /* Override any max-width */
+    margin-top: 1rem; /* Adjust margin-top as needed */
+  }
+
+  .aboutImageContainer {
+    justify-content: center; /* Center the image container */
   }
 
   .aboutImage {
-    width: 80%;
-    margin-bottom: 2rem;
-  }
-
-  .aboutTextContainer {
-    text-align: center;
-    padding: 0 2rem; /* Add padding to maintain spacing */
+    width: 80%; /* Adjust image size as needed */
+    margin-bottom: 2rem; /* Add some space between the image and the text */
   }
 }
 
 @media (max-width: 768px) {
   .aboutSection {
-    padding: 0.5rem; /* Adjusted padding */
-    margin-top: 10px;
+    padding: 2rem 1rem; /* Adjust padding for smaller screens */
   }
 
-  .sectionTitle,
+  .sectionTitle {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .aboutImage {
+    width: 50%; /* Adjust image size for smaller screens */
+  }
+
   .h1title {
-    font-size: 2rem; /* Smaller font size for titles */
+    font-size: 2rem;
   }
 
   .h2text {
-    font-size: 1.2rem; /* Adjust the font size for h2 text */
+    font-size: 1.5rem; /* Adjust text size for readability on small screens */
+  }
+
+  .h2description {
+    font-size: 1.25rem; /* Adjust text size for readability on small screens */
   }
 }
 
 /* For screens 480px and below */
 @media (max-width: 480px) {
-  .sectionTitle {
-    margin-bottom: 0.5rem; /* Decrease the bottom margin of the section title */
+  .aboutImage {
+    width: 80%; /* Larger image for very small screens */
   }
 
   .h1title {
-    margin-top: 0.5rem; /* Decrease the top margin of the h1 title greeting if necessary */
-    margin-bottom: 0.5rem; /* Also decrease the bottom margin to tighten up space */
+    font-size: 2rem;
+  }
+
+  .h2text {
+    font-size: 1.25rem; /* Even smaller text size for very small screens */
   }
 }
 

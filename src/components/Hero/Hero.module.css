@@ -79,7 +79,7 @@
 
 @media (max-width: 768px) {
   .container {
-    height: auto; /* Adjust height to fit content */
+    height: 85vh; /* Adjust height to fit content */
     padding: 2rem 1rem; /* Add padding to avoid touching the screen edges */
   }
 
