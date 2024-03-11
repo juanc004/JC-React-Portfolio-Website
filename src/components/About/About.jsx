@@ -3,7 +3,7 @@ import { getImageUrl } from "../../utils";
 import styles from "./About.module.css";
 // import { myMantra } from "./matra";
 
-export default function About() {
+export default function About () {
   const [selected, setSelected] = useState(null);
 
   const toggle = (index) => {

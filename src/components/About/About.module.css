@@ -45,7 +45,7 @@ body {
     var(--color-primary),
     var(--color-secondary)
   );
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   color: var(--color-secondary);
   margin: 2rem 0;
 }

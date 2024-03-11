@@ -1,0 +1,73 @@
+@import "../../vars.css";
+
+.container {
+  color: var(--color-text);
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column; /* Start with column layout for better mobile-first approach */
+  align-items: center; /* Align children to the center horizontally */
+  text-align: center; /* Center-align the text for consistency */
+  width: 100%;
+  padding: 58px 10%;
+}
+
+.text h2 {
+  font-size: 3rem; /* Adjusted for responsive scaling */
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 1rem; /* Consistent spacing */
+}
+
+.text p {
+  font-size: 1.25rem; /* Adjusted for responsive scaling */
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 2rem; /* Space before the links */
+}
+
+.links {
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  justify-content: center; /* Center items horizontally */
+  flex-wrap: wrap; /* Allow wrapping for different screen sizes */
+  list-style: none;
+  gap: 26px; /* Space between link items */
+}
+
+.link {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+  gap: 0.5em; /* Space between icon and text */
+}
+
+.link a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 1.5rem; /* Adjusted for responsive scaling */
+  font-weight: 600;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.link a:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.link img {
+  height: 1.5em; /* Icon size */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 830px) {
+  .links {
+    flex-direction: column; /* Stack link items vertically on smaller screens */
+  }
+
+  .link a {
+    justify-content: center; /* Ensure text is centered inside the anchor */
+  }
+}

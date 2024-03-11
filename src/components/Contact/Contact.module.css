@@ -1,73 +1,115 @@
 @import "../../vars.css";
 
-.container {
-  color: var(--color-text);
-  margin-top: 120px;
+.contactSection {
   display: flex;
-  flex-direction: column; /* Start with column layout for better mobile-first approach */
-  align-items: center; /* Align children to the center horizontally */
-  text-align: center; /* Center-align the text for consistency */
-  width: 100%;
-  padding: 58px 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height of the viewport */
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-.text h2 {
-  font-size: 3rem; /* Adjusted for responsive scaling */
+.sectionTitle {
+  font-size: 3rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--color-primary);
-  margin-bottom: 1rem; /* Consistent spacing */
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  /* -webkit-background-clip: text; */
+  color: var(--color-secondary);
+  margin: 1rem 0;
+  text-align: center;
 }
 
-.text p {
-  font-size: 1.25rem; /* Adjusted for responsive scaling */
-  font-weight: 400;
-  color: var(--color-text);
-  margin-bottom: 2rem; /* Space before the links */
+.contactHeader {
+  width: 80%;
+  margin-top: 4rem;
 }
 
-.links {
+.divider {
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--color-dark),
+    var(--color-primary),
+    var(--color-dark)
+  );
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.contactForm {
   display: flex;
-  flex-direction: row; /* Horizontal layout */
-  justify-content: center; /* Center items horizontally */
-  flex-wrap: wrap; /* Allow wrapping for different screen sizes */
-  list-style: none;
-  gap: 26px; /* Space between link items */
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto; /* Centers the form */
+  padding: 2rem;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-primary); /* Blue border */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 4rem;
 }
 
-.link {
-  display: flex;
-  align-items: center; /* Vertical alignment */
-  gap: 0.5em; /* Space between icon and text */
+.formInput,
+.submitButton {
+  font-size: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-.link a {
-  color: var(--color-primary);
-  text-decoration: none;
-  font-size: 1.5rem; /* Adjusted for responsive scaling */
+.formInput {
+  background: none;
+  border: 1px solid var(--color-primary);
+  color: var(--color-light);
+}
+
+.formTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-dark); /* Primary color for the title */
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formInput {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: none;
+  border: 1px solid var(--color-dark); /* Border color */
+  border-radius: 4px;
+  font-size: 1rem;
   font-weight: 600;
-  padding: 0.5em 1em;
-  border-radius: 8px;
+  color: var(--color-dark);
+}
+
+.formInput::placeholder {
+  color: var(--color-dark); /* Placeholder text color */
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-primary); /* Button background color */
+  color: var(--color-bg);
+  border: 8x;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.link a:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
-}
-
-.link img {
-  height: 1.5em; /* Icon size */
-  width: auto; /* Maintain aspect ratio */
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 830px) {
-  .links {
-    flex-direction: column; /* Stack link items vertically on smaller screens */
-  }
-
-  .link a {
-    justify-content: center; /* Ensure text is centered inside the anchor */
-  }
+.submitButton:hover {
+  background: var(--color-dark); /* Button hover background color */
+  color: var(--color-);
 }

@@ -1,32 +1,48 @@
-import React from "react";
-import styles from "./Contact.module.css";
-import { getImageUrl } from "../../utils";
+import React, { useState } from 'react';
+import styles from './Contact.module.css';
 
-export const Contact = () => {
+export default function Contact () {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Implement your form submission logic here
+    console.log('Submitted:', { email, message });
+  };
+
   return (
-    <footer id="contact" className={styles.container}>
-      <div className={styles.text}>
-        <h2>Contact</h2>
-        <p>Feel free to reach out!</p>
-      </div>
-      <ul className={styles.links}>
-        {/* Iterate over an array of contact methods here for cleaner JSX */}
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/emailIcon.png")} alt="Email" />
-          <a href="mailto:cardenasjuan1213@gmail.com">Email</a>
-        </li>
-        <li className={styles.link}>
-          <img
-            src={getImageUrl("contact/linkedinIcon.png")}
-            alt="LinkedIn icon"
+    <section className={styles.contactSection}>
+    <div className={styles.contactHeader}>
+        <hr className={styles.divider} />
+        <h1 className={styles.sectionTitle}>CONTACT ME</h1>
+        <hr className={styles.divider} />
+      <form onSubmit={handleSubmit} className={styles.contactForm}>
+        <h2 className={styles.formTitle}>Say Hello</h2>
+        <div className={styles.inputGroup}>
+          <input
+            type="email"
+            placeholder="Your email"
+            className={styles.formInput}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
-          <a href="https://www.linkedin.com/in/juancardenas01/">@linkedin</a>
-        </li>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
-          <a href="https://github.com/juanc004">@github</a>
-        </li>
-      </ul>
-    </footer>
+        </div>
+        <div className={styles.inputGroup}>
+          <textarea
+            placeholder="Message"
+            className={styles.formInput}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" className={styles.submitButton}>
+          Send message
+        </button>
+      </form>
+      </div>
+    </section>
   );
-};
+}
