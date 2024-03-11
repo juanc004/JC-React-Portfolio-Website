@@ -40,11 +40,6 @@ body {
 .sectionTitle {
   font-size: 3rem;
   font-weight: 700;
-  background: linear-gradient(
-    to right,
-    var(--color-primary),
-    var(--color-secondary)
-  );
   /* -webkit-background-clip: text; */
   color: var(--color-secondary);
   margin: 2rem 0;
