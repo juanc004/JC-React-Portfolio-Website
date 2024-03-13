@@ -105,8 +105,8 @@
     height: 85vh; /* Adjust height to fit content */
     padding: 2rem 1rem; /* Add padding to avoid touching the screen edges */
   }
-  .title {
-    font-size: 2rem; /* Further reduced to accommodate narrow screens */
+  .title, h1 {
+    font-size: 2.5rem; /* Further reduced to accommodate narrow screens */
   }
 
   .description {

@@ -51,7 +51,7 @@ const Project = ({ title, imageSrc, description, skills, demo, source }) => {
 const Projects = () => {
   // Make sure the imported data is named `projectsData`
   return (
-    <section className={styles.projectsSection} id="projects">
+    <div className={styles.projectsSection} id="projects">
       <div className={styles.aboutHeader}>
         <hr className={styles.divider} />
         <h1 className={styles.projectsTitle}>PROJECTS</h1>
@@ -62,7 +62,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

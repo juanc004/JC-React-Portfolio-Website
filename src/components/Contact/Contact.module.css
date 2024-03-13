@@ -21,7 +21,6 @@
 
 .contactHeader {
   width: 80%;
-  margin-top: 4rem;
 }
 
 .divider {
@@ -108,4 +107,27 @@
 .submitButton:hover {
   background: var(--color-dark); /* Button hover background color */
   color: var(--color-);
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .formTitle,
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* For screens 480px and below */
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .formTitle,
+  h1 {
+    font-size: 2rem;
+  }
 }
